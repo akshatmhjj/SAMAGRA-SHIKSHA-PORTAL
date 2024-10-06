@@ -1,0 +1,300 @@
+<html>
+    <head>
+        <title>Samagra Shiksha Portal</title>
+        <link rel="stylesheet" href="CSS/home.css">
+        <link rel="apple-touch-icon" sizes="152x152" href="IMG/Favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="IMG/Favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="IMG/Favicons/favicon-16x16.png">
+        <link rel="manifest" href="IMG/Favicons/site.webmanifest">
+        <link rel="mask-icon" href="IMG/Favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <script src="https://kit.fontawesome.com/ae284f5a17.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        
+        <header>
+            <div class = "header1">
+                <div class = "left">
+                    <div class = "logo">
+                        <img src="IMG/SS logo.png">
+                    </div>
+                    <div class = "title">
+                        <pre style = "font-size: 23px; font-weight: 600;">समग्र शिक्षा पोर्टल</pre><br>
+                        <pre style="font-size: 28px; font-weight: 600;">SAMAGRA SHIKSHA PORTAL</pre>
+                    </div>
+                </div>
+                
+                <div class = "right" >
+                    
+
+                    <!-- <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Search..." onkeyup="showSuggestions(this.value)" autocomplete="off">
+                        <div id="suggestions-box"></div>
+                        <div class="icon" onclick="redirectToSection()">
+                          <i class="fas fa-search"></i>
+                        </div>
+                    </div> -->
+
+                    <div class = "button-container">
+                        <button id = "openModalBtn">SIGN UP / LOG IN</button>
+                    </div>
+                
+                    <!-- The Modal -->
+                    <div id="authModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+
+                            <!-- Navigation inside the modal -->
+                            <h2>Select an Action</h2>
+                            <button onclick="showForm('signupForm')">Sign Up</button>
+                            <button onclick="showForm('loginForm')">Log In</button>
+
+                            <!-- Sign-Up Form -->
+                            <div id="signupForm" class="form-container">
+                                <h2>Sign Up</h2>
+                                <form id="signup">
+                                    <label for="name">School Name:</label>
+                                    <input type="text" id="name" required>
+                                    
+                                    <label for="phone">School ID:</label>
+                                    <input type="tel" id="phone" required>
+                                    
+                                    <label for="password">Password:</label>
+                                    <input type="password" id="password" required>
+                                    
+                                    <button type="submit">Sign Up</button>
+                                </form>
+                                <p class="success-message" id="signupSuccessMessage"></p>
+                            </div>
+
+                            <!-- Log-In Form -->
+                            <div id="loginForm" class="form-container">
+                                <h2>Log In</h2>
+                                <form id="login">
+                                    <label for="loginPhone">School ID:</label>
+                                    <input type="tel" id="loginPhone" required>
+                                    
+                                    <label for="loginPassword">Password:</label>
+                                    <input type="password" id="loginPassword" required>
+                                    
+                                    <button type="submit">Log In</button>
+                                </form>
+                                <p class="error-message" id="loginErrorMessage"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="dropdown">
+                        <button class="translate"><img src="Assets/Images/translate.svg" alt="Translate"></button>
+                        <div class="dropdown-content" id="languageDropdown">
+                            <a href="#" onclick="translateToHindi()">हिंदी</a>
+                            <a href="#" onclick="translateToEnglish()">English</a>
+                        </div>
+                    </div> -->
+
+                    <button class = "account" id="openSidebarBtn"><i class="fa-regular fa-user fa-xl" style="color: white; margin-left: 10px;"></i></button>
+
+                    <!-- Account Sidebar -->
+                    <div id="accountSidebar" class="sidebar">
+                        <a href="javascript:void(0)" class="close-sidebar" onclick="closeSidebar()">&times;</a>
+                        <div class="sidebar-content">
+                            <h2>Your Account</h2>
+                            <p><strong>School Name:</strong> <span id="accountName"></span></p>
+                            <p><strong>School ID:</strong> <span id="accountPhone"></span></p>
+                            <button id="logoutBtn">Log Out</button>
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+            </div>
+
+            
+
+            <div class = "navbar">
+                
+                <div class="bar"><a href="home.html">Home</a></div>
+
+                <div class="bar">
+                    <div class="bar"><a href="DYS.html">Discover Your School</a></div>
+                </div>
+
+                <div class="bar">
+                    <div class="bar"><a href="SCP.html">School Connect Portal</a></div>
+                </div>
+            
+                <div class="bar"><a href="#">Resources</a></div>
+
+                <!-- <div class="bar"><a href="#">Know Your Country</a></div> -->
+
+                <div class="bar">
+                    <div class="bar"><a href="about.html">About Us</a></div>
+                </div>
+            </div>
+
+        </header>
+        
+        <main>
+
+            <section>
+
+                <div class="content1">
+                    <h2 class="section-title">Discover Your School</h2>
+                    <p>
+                        Discover Your School is an innovative feature designed to help educators, administrators, and stakeholders assess and understand the unique needs of their schools. This interactive tool provides a comprehensive checklist of essential resources and requirements, enabling schools to identify their infrastructure, furniture, study materials, and other necessities. By utilizing this platform, schools can streamline their resource requests, ensuring they receive the support they need to enhance educational quality and student engagement.
+
+                        <br/> <br/>
+
+                        In addition to the checklist, Discover Your School offers insightful analytics and reporting features that allow schools to track their progress over time. With easy access to historical data and trends, educational institutions can make informed decisions and prioritize their resource allocation effectively. Whether it’s identifying urgent needs or planning for future enhancements, this platform supports schools in creating a conducive learning environment tailored to their specific requirements.
+                    </p>
+                </div>
+    
+                <hr>
+    
+                <div class="content2">
+                    <h2 class="section-title">School Connect Portal</h2>
+                    <p>
+                        The School Connect Portal serves as a dynamic hub for collaboration and communication among schools, teachers, and communities. This platform fosters a collaborative environment where educational professionals can share best practices, resources, and insights. With features designed for effective stakeholder engagement, the School Connect Portal empowers schools to build strong networks, enhancing educational outcomes and fostering a supportive learning environment for all.
+
+                        <br/> <br/>
+
+                        Moreover, the portal includes tools for professional development, allowing educators to participate in workshops, webinars, and peer-to-peer learning opportunities. Through community forums and discussion groups, educators can connect with their peers to exchange ideas and strategies, ultimately enriching their teaching practices. The School Connect Portal is dedicated to not only strengthening individual schools but also building a robust educational community that values collaboration and continuous improvement.    
+
+                        
+                    </p>
+                </div>
+
+                <hr>
+
+            </section>
+
+            <section class="about-us">
+                <div class="left">
+                    <div class="content">
+
+                        <h2>ABOUT US</h2>
+
+                        <p>
+                            At <span style=" font-weight: 600;">SAMAGRA SHIKSHA PORTAL,</span> we are committed to transforming the educational landscape by providing a comprehensive platform for schools to transition to standardized structures under the Samagra Shiksha framework. Our mission is to simplify the complexities of educational policy implementation, ensuring that every school has the resources and support they need to thrive.
+                            <br /> <br />
+
+                            
+                            We believe that education is a fundamental right, and by facilitating access to essential resources and guidelines, we empower schools, educators, and communities to enhance the quality of education. Our platform serves as a one-stop solution for schools to discover best practices, monitor their progress, and engage with stakeholders effectively.
+                            <br /> <br />
+
+                            Whether you are a school administrator, teacher, or community member, the Samagra Shiksha Portal is designed to provide you with the tools and information necessary to foster a more equitable and efficient educational environment. Join us in our journey to elevate the standards of education for all.
+
+                            Join us in exploring the foundational document of India, made simpler for all to learn and engage with.
+                        </p>
+
+                    
+
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="card">
+                    
+                    <img src="IMG/minister.jpg">
+
+                        <div class="card-footer">
+                            Hon'ble Education Minister<br />
+                            <span>Shri Dharmendra Pradhan</span>
+                        </div>
+                    </div> 
+                </div>
+            </section>
+            
+        </main>
+
+        
+
+        <footer>
+            <div class="footer-main">
+
+
+                <div class="upper">
+
+                    <div class="logoholder" style="margin-top: 1%;">
+                        <img src="IMG/SS logo.png" width="100px">
+                    </div>
+
+                    <!-- <div class="implink">
+                        <div>
+                            <p>Our Constitution</p>
+                            <ul>
+                                <li> <a href="our-constitution.html#Constitution">What is Constitution </a> </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div>
+                            <p>Games</p>
+                            <ul>
+                                <li> <a href="games.html#Spin-The-Wheel">Wheel of knowledge </a> </li>    
+                            </ul>
+                        </div>
+
+                        <div>
+                            <p>About-us</p>
+                            <ul>
+                                <li> <a href="about-us.html">Introduction </a> </li>
+                            </ul>
+                        </div>
+                    </div> -->
+
+                    <div class="contact-us">
+
+                        <div>
+                            <p> Contact Us :</p>
+                            <ul>
+                                <li><i class="fa fa-envelope-o fa-lg"></i></li>
+                                <li><i class="fa fa-phone" ></i></li>
+                            </ul>
+                        </div>
+    
+                        <div>
+                            <p> Social Media :</p>
+                            <ul>
+                                <li><i class="fa-brands fa-facebook fa-lg"></i></li>
+                                <li><i class="fa-brands fa-instagram fa-lg"></i></li>
+                                <li><i class="fa-brands fa-twitter fa-lg"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="lower">
+
+                    <div class="rights">
+                        <p><strong>All Rights Reserved. Powered by Code Hex</strong></p>
+                        <p><strong>Copyright © 2024</strong></p>
+                    </div>
+
+                    <!-- <div class="govtweb">
+
+                        <a href="https://www.nic.in/" target="_blank" rel="noopener noreferrer"><img src="Assets/Images/NIC.png" width="130px" ></a>
+
+                        <a href="https://www.digitalindia.gov.in/" target="_blank" rel="noopener noreferrer"><img src="Assets/Images/DI.png" width="124px" ></a>
+                        
+                    </div> -->
+
+                    <div style = "padding-right: 150px;">
+                        
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        
+    </body>
+
+    <script src="JS/home.js"></script>
+    
+</html>

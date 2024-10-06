@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Your School</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #5a5a5a;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .checklist-category {
+            margin-bottom: 15px;
+        }
+        .checklist-category h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .checklist-category label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .progress-section {
+            margin-top: 40px;
+        }
+        .progress-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .progress-table th, .progress-table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        .progress-table th {
+            background-color: #f4f4f4;
+        }
+        #submit-btn {
+            background-color: #1d597b;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #submit-btn:hover {
+            background-color: #1978af;
+            transition: background-color 0.3s ease;
+        }
+
+        #back-btn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #f9c74f;
+        border: none;
+        color: #1d3557;
+        padding: 10px 20px;
+        font-size: 1.2em;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #back-btn:hover {
+        background-color: #f08c00; /* Darker yellow on hover */
+        color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heading" style="font-size: 20px;">
+        <h1><span>Discover Your School</span></h1>
+    </div> 
+
+    <div class="container">
+        <button id="back-btn" onclick="window.history.back();">Back</button>
+        <!-- Checklist Section -->
+        <div class="form-section">
+            <h2>School Checklist</h2>
+
+            <div class="checklist-category">
+                <h3>Infrastructure</h3>
+                <label><input type="checkbox" name="checklist" value="Waterproofing"> Waterproofing</label>
+                <label><input type="checkbox" name="checklist" value="Plaster Renewal"> Plaster Renewal</label>
+                <label><input type="checkbox" name="checklist" value="Paint Renewal"> Paint Renewal</label>
+                <label><input type="checkbox" name="checklist" value="Electrical Appliances"> Electrical Appliances</label>
+            </div>
+
+            <div class="checklist-category">
+                <h3>Furniture</h3>
+                <label><input type="checkbox" name="checklist" value="Benches"> Benches</label>
+                <label><input type="checkbox" name="checklist" value="BlackBoard"> BlackBoard</label>
+                <label><input type="checkbox" name="checklist" value="Chairs"> Chairs</label>
+                <label><input type="checkbox" name="checklist" value="Tables"> Tables</label>
+                <label><input type="checkbox" name="checklist" value="Almirah"> Almirah</label>
+            </div>
+
+            <div class="checklist-category">
+                <h3>Study Material</h3>
+                <label><input type="checkbox" name="checklist" value="Books"> Books</label>
+                <label><input type="checkbox" name="checklist" value="Stationary Items"> Stationary Items</label>
+                <label><input type="checkbox" name="checklist" value="Guides"> Guides</label>
+            </div>
+
+            <div class="checklist-category">
+                <h3>Wearables</h3>
+                <label><input type="checkbox" name="checklist" value="Uniform">  Uniform</label>
+                <label><input type="checkbox" name="checklist" value="Bag"> Bag</label>
+            </div>
+
+            <div class="checklist-category">
+                <h3>Mid Day Meal</h3>
+                <label><input type="checkbox" name="checklist" value="Yes">  Yes</label>
+                <label><input type="checkbox" name="checklist" value="No"> No</label>
+            </div>
+
+
+
+            <button id="submit-btn">Submit Checklist to Resource Request Form</button>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="progress-section">
+            <h2>Check Your Progress</h2>
+            <table class="progress-table">
+                <thead>
+                    <tr>
+                        <th>Month/Year</th>
+                        <th>Resource Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="progress-body">
+                    <!-- Example rows, will be updated via JavaScript -->
+                    <tr>
+                        <td>January 2024</td>
+                        <td>Stationary Items</td>
+                        <td>Received</td>
+                    </tr>
+                    <tr>
+                        <td>February 2024</td>
+                        <td>Waterproofing</td>
+                        <td>Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Function to handle adding checklist items to localStorage
+        document.getElementById('submit-btn').addEventListener('click', function() {
+            const checkboxes = document.querySelectorAll('input[name="checklist"]:checked');
+            const selectedItems = [];
+    
+            checkboxes.forEach((checkbox) => {
+                selectedItems.push(checkbox.value);
+            });
+    
+            if (selectedItems.length > 0) {
+                // Store selected items in localStorage
+                localStorage.setItem('schoolChecklistSelections', JSON.stringify(selectedItems));
+    
+                // Navigate to the form page
+                window.location.href = "SCP.html"; // Update this URL to your form's actual location
+            } else {
+                alert("Please select at least one item.");
+            }
+        });
+    </script>
+    
+
+</body>
+</html>
